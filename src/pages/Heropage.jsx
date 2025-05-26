@@ -3,16 +3,21 @@ import { ArrowRight, Mail, Github, Linkedin, Instagram, Play, Menu, X, ExternalL
 import { Button } from "../Component/ui/Button";
 import { Badge } from "../Component/ui/Badge";
 import { Card, CardContent } from "../Component/ui/Card";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../Component/ui/tabs";
 import { Link } from 'react-router-dom';
 import GlobeBackground from './GlobalBg';
+import emailjs from '@emailjs/browser';
+import { Toaster, toast } from 'sonner';
+
 const Heropage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
     const [isScrolled, setIsScrolled] = useState(false);
+    const formRef = useRef();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -51,6 +56,28 @@ const Heropage = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            await emailjs.sendForm(
+                'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+                'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+                formRef.current,
+                'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+            );
+
+            toast.success('Message sent successfully!');
+            formRef.current.reset();
+        } catch (error) {
+            toast.error('Failed to send message. Please try again.');
+            console.error('Error:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className="relative min-h-screen overflow-hidden">
@@ -100,8 +127,9 @@ const Heropage = () => {
                                 transition={{ duration: 0.8, delay: 0.2 }}
                                 className="relative"
                             >
-                                <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary to-purple-500 opacity-75 blur"></div>
-                                <div className="relative rounded-2xl overflow-hidden">
+                               <div className="absolute inset-0 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10"></div>
+
+                                <div className="relative z-10 p-6 sm:p-8 rounded-2xl overflow-hidden">
                                     <img
                                         src="/placeholder.svg?height=550&width=450"
                                         width={450}
@@ -224,7 +252,7 @@ const Heropage = () => {
 
                             <TabsContent value="ui" className="mt-8">
                                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                                    <ProjectCard
+                                    <ProjectCard 
                                         type="ui"
                                         title="Finance App Redesign"
                                         category="UI/UX Design"
@@ -247,6 +275,7 @@ const Heropage = () => {
                                         image="/placeholder.svg?height=400&width=600"
                                         description="User-centered design for a health tracking application with intuitive data visualization."
                                         index={2}
+                                        
                                     />
                                 </div>
                             </TabsContent>
@@ -389,18 +418,18 @@ const Heropage = () => {
                                 create something amazing.
                             </p>
 
-                            <Card className="overflow-hidden">
+                            <Card className="bg-white/10 backdrop-blur-md border border-white/20 shadow-xl">
                                 <CardContent className="grid gap-6 p-6 sm:p-8">
                                     <div className="grid gap-4 sm:grid-cols-2">
                                         <div className="rounded-lg border bg-card p-4 text-center shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
                                             <Mail className="mx-auto mb-2 h-6 w-6" />
                                             <h3 className="font-medium">Email Me</h3>
-                                            <p className="mt-1 text-sm text-muted-foreground">contact@alexmorgan.com</p>
+                                            <p className="mt-1 text-sm text-muted-foreground">abhishekkumar@gmail.com</p>
                                         </div>
                                         <div className="rounded-lg border bg-card p-4 text-center shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
                                             <Instagram className="mx-auto mb-2 h-6 w-6" />
                                             <h3 className="font-medium">Follow Me</h3>
-                                            <p className="mt-1 text-sm text-muted-foreground">@alexmorgan.design</p>
+                                            <p className="mt-1 text-sm text-muted-foreground">@abhishekkumar</p>
                                         </div>
                                     </div>
 
@@ -408,7 +437,7 @@ const Heropage = () => {
                                         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10"></div>
                                         <div className="relative p-6 sm:p-8">
                                             <h3 className="mb-4 text-xl font-semibold">Send a Message</h3>
-                                            <form className="grid gap-4">
+                                            <form ref={formRef} onSubmit={handleSubmit} className="grid gap-4">
                                                 <div className="grid gap-4 sm:grid-cols-2">
                                                     <div className="grid gap-2">
                                                         <label htmlFor="name" className="text-sm font-medium">
@@ -416,6 +445,8 @@ const Heropage = () => {
                                                         </label>
                                                         <input
                                                             id="name"
+                                                            name="user_name"
+                                                            required
                                                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                                             placeholder="Your name"
                                                         />
@@ -426,7 +457,9 @@ const Heropage = () => {
                                                         </label>
                                                         <input
                                                             id="email"
+                                                            name="user_email"
                                                             type="email"
+                                                            required
                                                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                                             placeholder="Your email"
                                                         />
@@ -438,12 +471,26 @@ const Heropage = () => {
                                                     </label>
                                                     <textarea
                                                         id="message"
+                                                        name="message"
+                                                        required
                                                         className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                                         placeholder="Your message"
                                                     />
                                                 </div>
-                                                <Button size="lg" className="w-full">
-                                                    Send Message
+                                                <Button 
+                                                    type="submit" 
+                                                    size="lg" 
+                                                    className="w-full"
+                                                    disabled={loading}
+                                                >
+                                                    {loading ? (
+                                                        <div className="flex items-center gap-2">
+                                                            <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent"></div>
+                                                            Sending...
+                                                        </div>
+                                                    ) : (
+                                                        'Send Message'
+                                                    )}
                                                 </Button>
                                             </form>
                                         </div>
@@ -452,6 +499,7 @@ const Heropage = () => {
                             </Card>
                         </motion.div>
                     </div>
+                    <Toaster position="top-right" />
                 </section>
             </main>
         </div>
@@ -459,45 +507,97 @@ const Heropage = () => {
 };
 
 // Project Card Component
-function ProjectCard({ type, title, category, image, description, index }) {
+// function ProjectCard({ type, title, category, image, description, index }) {
+//     return (
+//         <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             viewport={{ once: true }}
+//             transition={{ duration: 0.5, delay: index * 0.1 }}
+//             whileHover={{ y: -5 }}
+//         >
+//             <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg">
+//                 <div className="relative aspect-video overflow-hidden">
+//                     <img
+//                         src={image || "/placeholder.svg"}
+//                         width={600}
+//                         height={400}
+//                         alt={title}
+//                         className="object-cover transition-transform duration-500 group-hover:scale-105"
+//                     />
+//                     <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+//                         {type === "video" ? (
+//                             <Button variant="secondary" size="icon" className="h-12 w-12 rounded-full">
+//                                 <Play className="h-6 w-6" />
+//                             </Button>
+//                         ) : (
+//                             <Button variant="secondary">View Project</Button>
+//                         )}
+//                     </div>
+//                 </div>
+//                 <CardContent className="p-4">
+//                     <Badge className="mb-2" variant={type === "video" ? "default" : "secondary"}>
+//                         {category}
+//                     </Badge>
+//                     <h3 className="mb-2 font-bold">{title}</h3>
+//                     <p className="text-sm text-muted-foreground">{description}</p>
+//                 </CardContent>
+//             </Card>
+//         </motion.div>
+//     );
+// }
+function ProjectCard({ type, title, category, image, description, index, variant = "gradient" }) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ y: -5 }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        whileHover={{ y: -5 }}
+      >
+        <Card
+          variant={variant}
+          className="group overflow-hidden transition-all duration-300 hover:shadow-2xl"
         >
-            <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg">
-                <div className="relative aspect-video overflow-hidden">
-                    <img
-                        src={image || "/placeholder.svg"}
-                        width={600}
-                        height={400}
-                        alt={title}
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
-                        {type === "video" ? (
-                            <Button variant="secondary" size="icon" className="h-12 w-12 rounded-full">
-                                <Play className="h-6 w-6" />
-                            </Button>
-                        ) : (
-                            <Button variant="secondary">View Project</Button>
-                        )}
-                    </div>
-                </div>
-                <CardContent className="p-4">
-                    <Badge className="mb-2" variant={type === "video" ? "default" : "secondary"}>
-                        {category}
-                    </Badge>
-                    <h3 className="mb-2 font-bold">{title}</h3>
-                    <p className="text-sm text-muted-foreground">{description}</p>
-                </CardContent>
-            </Card>
-        </motion.div>
+          <div className="relative aspect-video overflow-hidden rounded-xl">
+            {/* Background gradient layer */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-pink-500/30" />
+  
+            {/* Image Layer */}
+            <img
+              src={image || "/placeholder.svg"}
+              width={600}
+              height={400}
+              alt={title}
+              className="object-cover w-full h-full relative z-10 opacity-90 transition-transform duration-500 group-hover:scale-105"
+            />
+  
+            {/* Hover overlay */}
+            <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+              {type === "video" ? (
+                <Button variant="secondary" size="icon" className="h-12 w-12 rounded-full">
+                  <Play className="h-6 w-6" />
+                </Button>
+              ) : (
+                <Button variant="secondary">View Project</Button>
+              )}
+            </div>
+          </div>
+  
+          {/* Gradient can also be applied below here */}
+          <CardContent className="p-4" variant="gradient">
+            <Badge className="mb-2" variant={type === "video" ? "default" : "secondary"}>
+              {category}
+            </Badge>
+            <h3 className="mb-2 font-bold text-lg">{title}</h3>
+            <p className="text-sm text-muted-foreground">{description}</p>
+          </CardContent>
+        </Card>
+      </motion.div>
     );
-}
+  }
+  
+  
 
 export default Heropage;
 
