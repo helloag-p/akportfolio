@@ -96,7 +96,7 @@ const Heropage = () => {
                                 </Badge>
                                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
                                     <span className="block">Video Editor &</span>
-                                    <span className="block gradient-text">UI/UX Designer</span>
+                                    <span className="block gradient-text">Videographer</span>
                                 </h1>
                                 <p className="text-lg text-muted-foreground max-w-lg">
                                     I create compelling visual stories and design intuitive user experiences that engage and inspire.
@@ -121,27 +121,108 @@ const Heropage = () => {
                                     </a>
                                 </div>
                             </motion.div>
+                            {/* <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="relative border-4 border-primary rounded-3xl shadow-2xl"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-700 via-black to-primary opacity-20 rounded-3xl blur-lg"></div>
+
+                                <div className="relative z-10 p-2 sm:p-4 rounded-3xl overflow-hidden">
+                                    <img
+                                        src="/ak.jpg"
+                                        width={450}
+                                        height={550}
+                                        alt="Abhishek Kumar - Video Editor"
+                                        className="object-cover w-[450px] h-[550px] rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
+                                    />
+                                </div>
+                            </motion.div> */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
-                                className="relative"
+                                className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl"
                             >
-                               <div className="absolute inset-0 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10"></div>
+                                {/* Background Glow/Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-black to-indigo-500 opacity-25 blur-xl z-0" />
 
-                                <div className="relative z-10 p-6 sm:p-8 rounded-2xl overflow-hidden">
-                                    <img
-                                        src="/placeholder.svg?height=550&width=450"
-                                        width={450}
-                                        height={550}
-                                        alt="Profile"
-                                        className="object-cover transition-transform duration-500 hover:scale-105"
-                                    />
-                                </div>
+                                {/* Image Layer */}
+                                <img
+                                    src="/ak.jpg"
+                                    alt="Abhishek Kumar - Video Editor"
+                                    className="relative z-10 w-full h-full object-cover rounded-3xl transition-transform duration-500 hover:scale-105"
+                                />
                             </motion.div>
+
+                            {/* <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="relative flex justify-center items-center"
+>
+  <div className="relative group transition-transform duration-500 hover:scale-105">
+    <img
+      src="/ak.jpg"
+      alt="Abhishek Kumar - Video Editor"
+      width={500}
+      height={600}
+      className="rounded-3xl border-4 border-blue-500 shadow-2xl object-cover"
+    />
+    {/* Glow / Overlay Effect */}
+                            {/* <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-700/30 to-blue-500/20 blur-md opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div> */}
+                            {/* Text Overlay (optional) */}
+                            {/* <div className="absolute bottom-4 left-4 text-white text-xl font-semibold bg-black/60 px-4 py-2 rounded-lg shadow-md">
+      Abhishek Kumar
+    </div> */}
+                            {/* </div>
+</motion.div> */}
+
                         </div>
                     </div>
                 </section>
+                <div className="flex justify-center py-12">
+                    <div className="bg-gradient-to-br from-yellow-900/60 via-black/80 to-yellow-700/40 rounded-2xl shadow-2xl p-8 w-full max-w-3xl flex flex-col items-center border border-yellow-900/30">
+                        {/* <h2 className="text-4xl font-extrabold text-white tracking-widest mb-6 drop-shadow-lg text-center" style={{ letterSpacing: '0.15em' }}>
+                            CONTENTS
+                        </h2> */}
+                        <img
+                            src="/content.jpg"
+                            alt="Contents of Video Editor"
+                            className="max-w-full h-auto rounded-xl shadow-lg border-4 border-yellow-700/40"
+                        />
+                    </div>
+                </div>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-12">
+                    {/* Skills Image */}
+                    <div className="bg-white/5 rounded-2xl shadow-2xl p-4 max-w-xl w-full flex justify-center items-center border-4 border-purple-500/80">
+                        <img
+                            src="whychoose.jpg"
+                            alt="Skills - Why Choose Me"
+                            className="max-w-full h-auto rounded-xl shadow-lg"
+                        />
+                    </div>
+                    {/* Video */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="relative rounded-2xl overflow-hidden shadow-2xl max-w-xl w-full flex justify-center items-center border-4 border-yellow-400/80"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-black to-indigo-500 opacity-25 blur-xl z-0" />
+                        <video
+                            autoPlay
+                            loop
+                            controls
+                            playsInline
+                            className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105"
+                        >
+                            <source src="main.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </motion.div>
+                </div>
 
                 <section id="work" className="py-20 md:py-32">
                     <div className="container">
@@ -252,7 +333,7 @@ const Heropage = () => {
 
                             <TabsContent value="ui" className="mt-8">
                                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                                    <ProjectCard 
+                                    <ProjectCard
                                         type="ui"
                                         title="Finance App Redesign"
                                         category="UI/UX Design"
@@ -275,7 +356,7 @@ const Heropage = () => {
                                         image="/placeholder.svg?height=400&width=600"
                                         description="User-centered design for a health tracking application with intuitive data visualization."
                                         index={2}
-                                        
+
                                     />
                                 </div>
                             </TabsContent>
@@ -477,9 +558,9 @@ const Heropage = () => {
                                                         placeholder="Your message"
                                                     />
                                                 </div>
-                                                <Button 
-                                                    type="submit" 
-                                                    size="lg" 
+                                                <Button
+                                                    type="submit"
+                                                    size="lg"
                                                     className="w-full"
                                                     disabled={loading}
                                                 >
@@ -548,56 +629,56 @@ const Heropage = () => {
 // }
 function ProjectCard({ type, title, category, image, description, index, variant = "gradient" }) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        whileHover={{ y: -5 }}
-      >
-        <Card
-          variant={variant}
-          className="group overflow-hidden transition-all duration-300 hover:shadow-2xl"
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{ y: -5 }}
         >
-          <div className="relative aspect-video overflow-hidden rounded-xl">
-            {/* Background gradient layer */}
-            <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-pink-500/30" />
-  
-            {/* Image Layer */}
-            <img
-              src={image || "/placeholder.svg"}
-              width={600}
-              height={400}
-              alt={title}
-              className="object-cover w-full h-full relative z-10 opacity-90 transition-transform duration-500 group-hover:scale-105"
-            />
-  
-            {/* Hover overlay */}
-            <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
-              {type === "video" ? (
-                <Button variant="secondary" size="icon" className="h-12 w-12 rounded-full">
-                  <Play className="h-6 w-6" />
-                </Button>
-              ) : (
-                <Button variant="secondary">View Project</Button>
-              )}
-            </div>
-          </div>
-  
-          {/* Gradient can also be applied below here */}
-          <CardContent className="p-4" variant="gradient">
-            <Badge className="mb-2" variant={type === "video" ? "default" : "secondary"}>
-              {category}
-            </Badge>
-            <h3 className="mb-2 font-bold text-lg">{title}</h3>
-            <p className="text-sm text-muted-foreground">{description}</p>
-          </CardContent>
-        </Card>
-      </motion.div>
+            <Card
+                variant={variant}
+                className="group overflow-hidden transition-all duration-300 hover:shadow-2xl"
+            >
+                <div className="relative aspect-video overflow-hidden rounded-xl">
+                    {/* Background gradient layer */}
+                    <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-pink-500/30" />
+
+                    {/* Image Layer */}
+                    <img
+                        src={image || "/placeholder.svg"}
+                        width={600}
+                        height={400}
+                        alt={title}
+                        className="object-cover w-full h-full relative z-10 opacity-90 transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+                        {type === "video" ? (
+                            <Button variant="secondary" size="icon" className="h-12 w-12 rounded-full">
+                                <Play className="h-6 w-6" />
+                            </Button>
+                        ) : (
+                            <Button variant="secondary">View Project</Button>
+                        )}
+                    </div>
+                </div>
+
+                {/* Gradient can also be applied below here */}
+                <CardContent className="p-4" variant="gradient">
+                    <Badge className="mb-2" variant={type === "video" ? "default" : "secondary"}>
+                        {category}
+                    </Badge>
+                    <h3 className="mb-2 font-bold text-lg">{title}</h3>
+                    <p className="text-sm text-muted-foreground">{description}</p>
+                </CardContent>
+            </Card>
+        </motion.div>
     );
-  }
-  
-  
+}
+
+
 
 export default Heropage;
 
