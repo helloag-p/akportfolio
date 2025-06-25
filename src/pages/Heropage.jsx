@@ -160,15 +160,6 @@ const Heropage = () => {
                     </div>
                 </section>
                 <div className="flex justify-center py-12">
-                <div className="bg-gradient-to-br from-yellow-900/60 via-black/80 to-yellow-700/40 rounded-2xl shadow-2xl p-8 w-full max-w-3xl flex flex-col items-center border border-yellow-900/30">
-                        <img
-                            src="/content.jpg"
-                            alt="Contents of Video Editor"
-                            className="max-w-full h-auto rounded-xl shadow-lg border-4 border-yellow-700/40"
-                        />
-                    </div>
-                </div>
-                <div className="flex justify-center py-12">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -189,6 +180,16 @@ const Heropage = () => {
                         </video>
                     </motion.div>
                 </div>
+                <div className="flex justify-center py-12">
+                <div className="bg-gradient-to-br from-yellow-900/60 via-black/80 to-yellow-700/40 rounded-2xl shadow-2xl p-8 w-full max-w-3xl flex flex-col items-center border border-yellow-900/30">
+                        <img
+                            src="/content.jpg"
+                            alt="Contents of Video Editor"
+                            className="max-w-full h-auto rounded-xl shadow-lg border-4 border-yellow-700/40"
+                        />
+                    </div>
+                </div>
+                
                 <div className="flex justify-center py-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
