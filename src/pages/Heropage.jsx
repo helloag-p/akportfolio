@@ -81,6 +81,23 @@ const Heropage = () => {
 
     return (
         <div className="relative min-h-screen overflow-hidden">
+            {/* Soft Radial Gradient Background */}
+            <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_60%_40%,rgba(120,120,255,0.10),transparent_70%)]" />
+            {/* Subtle SVG Dots Pattern Overlay */}
+            <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
+                <svg width="100%" height="100%">
+                    <defs>
+                        <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <circle cx="1" cy="1" r="1.5" fill="#a3a3a3" fillOpacity="0.10" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#dots)" />
+                </svg>
+            </div>
+            {/* Faint Grid Pattern Overlay */}
+            <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(90deg,rgba(120,120,255,0.04)_1px,transparent_1px),linear-gradient(180deg,rgba(120,120,255,0.04)_1px,transparent_1px)] bg-[size:40px_40px]" aria-hidden="true" />
+            {/* Large Blurred Blob for Depth */}
+            <div className="pointer-events-none fixed -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-purple-400 opacity-20 blur-3xl -z-10" aria-hidden="true" />
             <main className="pt-16 relative z-10">
                 <section id="home" className="min-h-screen flex items-center">
                     <div className="container mx-auto px-4 py-20">
@@ -121,24 +138,7 @@ const Heropage = () => {
                                     </a>
                                 </div>
                             </motion.div>
-                            {/* <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="relative border-4 border-primary rounded-3xl shadow-2xl"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-700 via-black to-primary opacity-20 rounded-3xl blur-lg"></div>
-
-                                <div className="relative z-10 p-2 sm:p-4 rounded-3xl overflow-hidden">
-                                    <img
-                                        src="/ak.jpg"
-                                        width={450}
-                                        height={550}
-                                        alt="Abhishek Kumar - Video Editor"
-                                        className="object-cover w-[450px] h-[550px] rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
-                                    />
-                                </div>
-                            </motion.div> */}
+                    
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
@@ -156,37 +156,11 @@ const Heropage = () => {
                                 />
                             </motion.div>
 
-                            {/* <motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8, delay: 0.2 }}
-  className="relative flex justify-center items-center"
->
-  <div className="relative group transition-transform duration-500 hover:scale-105">
-    <img
-      src="/ak.jpg"
-      alt="Abhishek Kumar - Video Editor"
-      width={500}
-      height={600}
-      className="rounded-3xl border-4 border-blue-500 shadow-2xl object-cover"
-    />
-    {/* Glow / Overlay Effect */}
-                            {/* <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-700/30 to-blue-500/20 blur-md opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div> */}
-                            {/* Text Overlay (optional) */}
-                            {/* <div className="absolute bottom-4 left-4 text-white text-xl font-semibold bg-black/60 px-4 py-2 rounded-lg shadow-md">
-      Abhishek Kumar
-    </div> */}
-                            {/* </div>
-</motion.div> */}
-
                         </div>
                     </div>
                 </section>
                 <div className="flex justify-center py-12">
-                    <div className="bg-gradient-to-br from-yellow-900/60 via-black/80 to-yellow-700/40 rounded-2xl shadow-2xl p-8 w-full max-w-3xl flex flex-col items-center border border-yellow-900/30">
-                        {/* <h2 className="text-4xl font-extrabold text-white tracking-widest mb-6 drop-shadow-lg text-center" style={{ letterSpacing: '0.15em' }}>
-                            CONTENTS
-                        </h2> */}
+                <div className="bg-gradient-to-br from-yellow-900/60 via-black/80 to-yellow-700/40 rounded-2xl shadow-2xl p-8 w-full max-w-3xl flex flex-col items-center border border-yellow-900/30">
                         <img
                             src="/content.jpg"
                             alt="Contents of Video Editor"
@@ -194,21 +168,13 @@ const Heropage = () => {
                         />
                     </div>
                 </div>
-                <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-12">
-                    {/* Skills Image */}
-                    <div className="bg-white/5 rounded-2xl shadow-2xl p-4 max-w-xl w-full flex justify-center items-center border-4 border-purple-500/80">
-                        <img
-                            src="whychoose.jpg"
-                            alt="Skills - Why Choose Me"
-                            className="max-w-full h-auto rounded-xl shadow-lg"
-                        />
-                    </div>
-                    {/* Video */}
+                <div className="flex justify-center py-12">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative rounded-2xl overflow-hidden shadow-2xl max-w-xl w-full flex justify-center items-center border-4 border-yellow-400/80"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="relative rounded-3xl overflow-hidden shadow-2xl max-w-3xl w-full flex justify-center items-center border-4 border-yellow-400/80 bg-gradient-to-br from-purple-600/20 via-black/60 to-indigo-500/20 p-4"
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-black to-indigo-500 opacity-25 blur-xl z-0" />
                         <video
@@ -216,14 +182,32 @@ const Heropage = () => {
                             loop
                             controls
                             playsInline
-                            className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105"
+                            className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105 shadow-xl"
                         >
                             <source src="main.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </motion.div>
                 </div>
-
+                <div className="flex justify-center py-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="bg-gradient-to-br from-purple-500/10 via-yellow-900/10 to-yellow-700/10 rounded-2xl shadow-2xl p-8 w-full max-w-xl flex flex-col items-center border-4 border-purple-500/40"
+                    >
+                        <img
+                            src="whychoose.jpg"
+                            alt="Skills - Why Choose Me"
+                            className="max-w-full h-auto rounded-xl shadow-lg border-4 border-purple-500/20"
+                        />
+                        <div className="mt-6 text-center">
+                            <h3 className="text-xl font-semibold mb-2 text-purple-700">Why Choose Me?</h3>
+                            <p className="text-muted-foreground text-base">Skilled in both video editing and videography, I bring a unique blend of creativity and technical expertise to every project.</p>
+                        </div>
+                    </motion.div>
+                </div>
                 <section id="work" className="py-20 md:py-32">
                     <div className="container">
                         <motion.div

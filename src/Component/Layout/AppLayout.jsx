@@ -3,15 +3,13 @@ import { Navbar } from './Navbar'
 import Footer from './Footer'
 import { Loading } from './Loading'
 import VantaBackground from '../vantabg'
-
 export function AppLayout() {
   const navigation = useNavigation()
 
   return (
     <>
        <div className="relative min-h-screen">
-      <VantaBackground />
-
+       {/* <VantaBackground /> */}
       <div className="relative z-10">
         <Navbar />
         {navigation.state === "loading" ? (
