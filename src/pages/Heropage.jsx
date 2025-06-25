@@ -185,7 +185,7 @@ const Heropage = () => {
                             className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105 shadow-xl"
                         >
                             <source src="main.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
+                            Your browser does not support a the video tag.
                         </video>
                     </motion.div>
                 </div>
