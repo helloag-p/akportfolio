@@ -169,15 +169,19 @@ const Heropage = () => {
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-black to-indigo-500 opacity-25 blur-xl z-0" />
                         <video
-                            autoPlay
-                            loop
-                            controls
-                            playsInline
-                            className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105 shadow-xl"
-                        >
-                            <source src="main.mp4" type="video/mp4" />
-                            Your browser does not support a the video tag.
-                        </video>
+  autoPlay
+  loop
+  controls
+  playsInline
+  className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105 shadow-xl"
+>
+  <source
+    src="https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271662/ybqxbwxk8d6c7y5n1fgx.mp4"
+    type="video/mp4"
+  />
+  Your browser does not support the video tag.
+</video>
+
                     </motion.div>
                 </div>
                 <div className="flex justify-center py-12">
