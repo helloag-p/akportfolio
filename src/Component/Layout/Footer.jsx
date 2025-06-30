@@ -25,10 +25,9 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex gap-6">
             {[
-              { href: 'https://github.com', icon: <Github />, label: 'GitHub' },
-              { href: 'https://linkedin.com', icon: <Linkedin />, label: 'LinkedIn' },
-              { href: 'https://instagram.com', icon: <Instagram />, label: 'Instagram' },
-              { href: 'mailto:youremail@example.com', icon: <Mail />, label: 'Email' },
+              { href: 'https://www.linkedin.com/in/abhishek-kumar-b77b91288/', icon: <Linkedin />, label: 'LinkedIn' },
+              { href: 'https://www.instagram.com/abhishek._.075/', icon: <Instagram />, label: 'Instagram' },
+              { href: 'mailto:abhishekkumardev57@gmail.com', icon: <Mail />, label: 'Email' },
             ].map(({ href, icon, label }) => (
               <a
                 key={label}

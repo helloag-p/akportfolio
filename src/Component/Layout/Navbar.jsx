@@ -47,9 +47,9 @@ export const Navbar = () => {
     
                             <nav className="hidden md:flex items-center gap-8">
                                 {["home", "work", "about", "contact"].map((section, index) => (
-                                    <Link
+                                    <a
                                         key={section}
-                                        to={`#${section}`}
+                                        href={`#${section}`}
                                         className={cn(
                                             "relative font-medium transition-colors hover:text-primary",
                                             activeSection === section ? "text-primary" : "text-muted-foreground"
@@ -69,7 +69,7 @@ export const Navbar = () => {
                                                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                             />
                                         )}
-                                    </Link>
+                                    </a>
                                 ))}
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.8 }}
@@ -107,9 +107,9 @@ export const Navbar = () => {
                                 <div className="container mx-auto px-4 py-4">
                                     <nav className="flex flex-col gap-4">
                                         {["home", "work", "about", "contact"].map((section) => (
-                                            <Link
+                                            <a
                                                 key={section}
-                                                to={`#${section}`}
+                                                href={`#${section}`}
                                                 className={cn(
                                                     "py-2 font-medium transition-colors hover:text-primary",
                                                     activeSection === section ? "text-primary" : "text-muted-foreground"
@@ -117,7 +117,7 @@ export const Navbar = () => {
                                                 onClick={() => setIsMenuOpen(false)}
                                             >
                                                 {section.charAt(0).toUpperCase() + section.slice(1)}
-                                            </Link>
+                                            </a>
                                         ))}
                                         <Button className="mt-2 bg-primary text-primary-foreground hover:bg-primary/90">
                                             Hire Me

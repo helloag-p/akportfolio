@@ -128,9 +128,6 @@ const Heropage = () => {
                                 </div>
                                 <div className="flex gap-4 pt-4">
                                     <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                        <Github className="h-5 w-5" />
-                                    </a>
-                                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                                         <Linkedin className="h-5 w-5" />
                                     </a>
                                     <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -217,27 +214,7 @@ const Heropage = () => {
                 </div>
                 <section id="work" className="py-20 md:py-32">
                     <div className="container">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="mx-auto mb-12 max-w-2xl text-center"
-                        >
-                            <Badge className="mb-3">Portfolio</Badge>
-                            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Featured Work</h2>
-                            <p className="text-muted-foreground">
-                                A selection of my recent projects showcasing my skills in video editing and UI/UX design.
-                            </p>
-                        </motion.div>
-
                         <WorkShowcase />
-
-                        <div className="text-center">
-                            <Button variant="outline" size="lg">
-                                View All Projects <ChevronRight className="ml-2 h-4 w-4" />
-                            </Button>
-                        </div>
                     </div>
                 </section>
                 <section id="about" className="relative py-20 md:py-32">
@@ -376,12 +353,12 @@ const Heropage = () => {
                                         <div className="rounded-lg border bg-card p-4 text-center shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
                                             <Mail className="mx-auto mb-2 h-6 w-6" />
                                             <h3 className="font-medium">Email Me</h3>
-                                            <p className="mt-1 text-sm text-muted-foreground">abhishekkumar@gmail.com</p>
+                                            <p className="mt-1 text-sm text-muted-foreground">abhishekkumardev57@gmail.com</p>
                                         </div>
                                         <div className="rounded-lg border bg-card p-4 text-center shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground">
                                             <Instagram className="mx-auto mb-2 h-6 w-6" />
                                             <h3 className="font-medium">Follow Me</h3>
-                                            <p className="mt-1 text-sm text-muted-foreground">@abhishekkumar</p>
+                                            <p className="mt-1 text-sm text-muted-foreground">@abhishek._.075</p>
                                         </div>
                                     </div>
 
@@ -460,25 +437,27 @@ const Heropage = () => {
 
 // Work showcase data and component
 const workData = [
+  // Long Videos
   {
-    type: "Cinematography",
-    title: "Cinematic Scene 1",
-    description: "A visually stunning scene shot with professional equipment.",
-    media: "/cinema1.jpg",
-    previewType: "image",
+    type: "Long Video",
+    title: "Event Aftermovie",
+    description: "A full-length cinematic aftermovie for a major event.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751270279/lwjqqisrj0lcxuaycpye.mp4",
+    previewType: "video",
   },
   {
-    type: "Cinematography",
-    title: "Cinematic Scene 2",
-    description: "Capturing the essence of storytelling through visuals.",
-    media: "/cinema2.jpg",
-    previewType: "image",
+    type: "Long Video",
+    title: "Documentary Feature",
+    description: "A documentary exploring unique stories.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751275000/longvideo2.mp4",
+    previewType: "video",
   },
+  // Shorts
   {
     type: "Shorts",
     title: "Short Video 1",
     description: "A quick, engaging vertical short.",
-    media: "/short1.mp4",
+    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271451/wcloubooir7hti197qzz.mp4",
     previewType: "video",
   },
   {
@@ -489,19 +468,42 @@ const workData = [
     previewType: "video",
   },
   {
-    type: "Banners",
-    title: "Promotional Banner",
-    description: "A bold, eye-catching banner design.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271876/qhsicn0tx5m6q2kv46ei.png",
-    previewType: "image",
+    type: "Shorts",
+    title: "Short Video 3",
+    description: "A trending short with cinematic effects.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751272731/WhatsApp_Video_2025-06-30_at_2.01.26_PM_syrzav.mp4",
+    previewType: "video",
+  },
+  // Cinematography
+  {
+    type: "Cinematography",
+    title: "Cinematic Scene 1",
+    description: "A visually stunning scene shot with professional equipment.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751273982/lv_0_20250521023647_amzmbb.mp4",
+    previewType: "video",
   },
   {
-    type: "Banners",
-    title: "Event Banner",
-    description: "A cinematic banner for a special event.",
-    media: "/banner2.jpg",
-    previewType: "image",
+    type: "Cinematography",
+    title: "Cinematic Scene 2",
+    description: "Capturing the essence of storytelling through visuals.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751274693/lv_0_20250330151242_ivjh2l.mp4",
+    previewType: "video",
   },
+  {
+    type: "Cinematography",
+    title: "Nature Timelapse",
+    description: "A breathtaking timelapse of nature.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751272943/lv_0_20250420163425_bjioql.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Cinematography",
+    title: "Urban Exploration",
+    description: "Exploring the city with cinematic shots.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751273951/lv_0_20250526160450_r02kie.mp4",
+    previewType: "video",
+  },
+  // Thumbnails
   {
     type: "Thumbnails",
     title: "YouTube Thumbnail 1",
@@ -516,6 +518,63 @@ const workData = [
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271950/chhmuq7m7ikt67mbrahg.png",
     previewType: "image",
   },
+  {
+    type: "Thumbnails",
+    title: "Travel Vlog Thumbnail",
+    description: "A thumbnail for a travel vlog.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271882/wb5ij9ohfiz0lhhozect.png",
+    previewType: "image",
+  },
+  {
+    type: "Thumbnails",
+    title: "Tech Review Thumbnail",
+    description: "A tech review video thumbnail.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271884/nfidnwmobbau4dlwjbjn.png",
+    previewType: "image",
+  },
+  {
+    type: "Thumbnails",
+    title: "Cooking Show Thumbnail",
+    description: "A delicious cooking show thumbnail.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271896/paeddxycyrf0be15mtbq.png",
+    previewType: "image",
+  },
+  {
+    type: "Thumbnails",
+    title: "Music Video Thumbnail",
+    description: "A thumbnail for a music video.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271921/ixygwsnm5d94bkvcgr3e.png",
+    previewType: "image",
+  },
+  {
+    type: "Thumbnails",
+    title: "Gaming Highlight Thumbnail",
+    description: "A gaming highlight video thumbnail.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271927/djaupyrxy5t4doo6wzt4.png",
+    previewType: "image",
+  },
+  {
+    type: "Thumbnails",
+    title: "Fitness Channel Thumbnail",
+    description: "A fitness channel video thumbnail.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271957/qwvbbyg22aqqlmvuiim9.png",
+    previewType: "image",
+  },
+  // Banners
+  {
+    type: "Banners",
+    title: "Promotional Banner",
+    description: "A bold, eye-catching banner design.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271876/qhsicn0tx5m6q2kv46ei.png",
+    previewType: "image",
+  },
+  {
+    type: "Banners",
+    title: "Event Banner",
+    description: "A cinematic banner for a special event.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271963/q590h4rztpnbfilwe4zv.png",
+    previewType: "image",
+  },
 ];
 
 function WorkShowcase() {
@@ -525,18 +584,20 @@ function WorkShowcase() {
     acc[work.type].push(work);
     return acc;
   }, {});
-  const categoryOrder = ["Cinematography", "Shorts", "Banners", "Thumbnails"];
+  const categoryOrder = ["Long Video", "Shorts", "Cinematography", "Thumbnails", "Banners"];
   const categoryColors = {
-    Cinematography: "text-purple-400",
+    "Long Video": "text-green-400",
     Shorts: "text-pink-400",
-    Banners: "text-yellow-400",
+    Cinematography: "text-purple-400",
     Thumbnails: "text-blue-400",
+    Banners: "text-yellow-400",
   };
   const cardColors = {
-    Cinematography: "from-purple-600/20 to-indigo-600/10 border-purple-400/40",
+    "Long Video": "from-green-600/20 to-green-400/10 border-green-400/40",
     Shorts: "from-pink-500/20 to-yellow-400/10 border-pink-400/40",
-    Banners: "from-yellow-400/20 to-orange-400/10 border-yellow-400/40",
+    Cinematography: "from-purple-600/20 to-indigo-600/10 border-purple-400/40",
     Thumbnails: "from-blue-400/20 to-purple-400/10 border-blue-400/40",
+    Banners: "from-yellow-400/20 to-orange-400/10 border-yellow-400/40",
     default: "from-black/80 to-primary/10 border-primary/20"
   };
   return (
@@ -552,10 +613,11 @@ function WorkShowcase() {
             <div key={category} className="mb-16">
               <h3 className={`text-2xl md:text-3xl font-extrabold mb-6 text-center tracking-tight`}>
                 <span className={categoryColors[category]}>
-                  {category === "Shorts" ? "Short " : category === "Cinematography" ? "Long " : ""}
-                  {category}
+                  {category === "Long Video" ? "Long Videos" :
+                   category === "Shorts" ? "Short Videos" :
+                   category === "Cinematography" ? "Cinematography Videos" :
+                   category}
                 </span>
-                {(category === "Shorts" || category === "Cinematography") && <span className="text-white"> Videos</span>}
               </h3>
               <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
                 {groupedWorks[category].map((work, idx) => (
@@ -572,7 +634,12 @@ function WorkShowcase() {
                         <>
                           <video src={work.media} controls className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
                           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                            <Play className="w-16 h-16 text-white/80 drop-shadow-lg" />
+                            <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-black/60 shadow-lg">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.15"/>
+                                <polygon points="13,10 24,16 13,22" fill="white" />
+                              </svg>
+                            </span>
                           </div>
                         </>
                       )}
