@@ -152,7 +152,8 @@ const Heropage = () => {
                                 <img
                                     src="/ak.jpg"
                                     alt="Abhishek Kumar - Video Editor"
-                                    className="relative z-10 w-full h-full object-cover rounded-3xl transition-transform duration-500 hover:scale-105"
+                                    className="relative z-10 w-full h-full object-cover rounded-3xl border-4 border-white/80 shadow-2xl ring-4 ring-purple-400/30 transition-transform duration-300 hover:scale-105 hover:brightness-110"
+                                    style={{ boxShadow: "0 0 48px 8px rgba(128,0,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.10)" }}
                                 />
                             </motion.div>
 
@@ -185,11 +186,12 @@ const Heropage = () => {
                     </motion.div>
                 </div>
                 <div className="flex justify-center py-12">
-                <div className="bg-gradient-to-br from-yellow-900/60 via-black/80 to-yellow-700/40 rounded-2xl shadow-2xl p-8 w-full max-w-3xl flex flex-col items-center border border-yellow-900/30">
+                    <div className="bg-gradient-to-br from-yellow-900/60 via-black/80 to-yellow-700/40 rounded-2xl shadow-2xl p-8 w-full max-w-3xl flex flex-col items-center border border-yellow-900/30">
                         <img
                             src="/content.jpg"
                             alt="Contents of Video Editor"
-                            className="max-w-full h-auto rounded-xl shadow-lg border-4 border-yellow-700/40"
+                            className="max-w-full h-auto rounded-2xl shadow-2xl border-4 border-white/70 ring-4 ring-yellow-400/40 transition-transform duration-300 hover:scale-105 hover:brightness-110"
+                            style={{ boxShadow: "0 0 32px 8px rgba(255, 215, 0, 0.25)" }}
                         />
                     </div>
                 </div>
@@ -229,127 +231,7 @@ const Heropage = () => {
                             </p>
                         </motion.div>
 
-                        <Tabs defaultValue="all" className="mb-12">
-                            <div className="flex justify-center">
-                                <TabsList className="grid w-full max-w-md grid-cols-3">
-                                    <TabsTrigger value="all">All Projects</TabsTrigger>
-                                    <TabsTrigger value="video">Video Editing</TabsTrigger>
-                                    <TabsTrigger value="ui">UI/UX Design</TabsTrigger>
-                                </TabsList>
-                            </div>
-
-                            <TabsContent value="all" className="mt-8">
-                                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                                    <ProjectCard
-                                        type="video"
-                                        title="Brand Campaign"
-                                        category="Video Editing"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="A dynamic brand campaign video for a tech startup showcasing their innovative products."
-                                        index={0}
-                                    />
-                                    <ProjectCard
-                                        type="ui"
-                                        title="Finance App Redesign"
-                                        category="UI/UX Design"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="Complete redesign of a finance application focusing on improved user experience and accessibility."
-                                        index={1}
-                                    />
-                                    <ProjectCard
-                                        type="video"
-                                        title="Documentary Short"
-                                        category="Video Editing"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="An award-winning documentary short film about sustainable farming practices."
-                                        index={2}
-                                    />
-                                    <ProjectCard
-                                        type="ui"
-                                        title="E-commerce Website"
-                                        category="UI/UX Design"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="End-to-end design for an e-commerce platform with a focus on conversion optimization."
-                                        index={3}
-                                    />
-                                    <ProjectCard
-                                        type="video"
-                                        title="Music Video"
-                                        category="Video Editing"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="Creative music video editing for an indie band's debut single."
-                                        index={4}
-                                    />
-                                    <ProjectCard
-                                        type="ui"
-                                        title="Health App"
-                                        category="UI/UX Design"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="User-centered design for a health tracking application with intuitive data visualization."
-                                        index={5}
-                                    />
-                                </div>
-                            </TabsContent>
-
-                            <TabsContent value="video" className="mt-8">
-                                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                                    <ProjectCard
-                                        type="video"
-                                        title="Brand Campaign"
-                                        category="Video Editing"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="A dynamic brand campaign video for a tech startup showcasing their innovative products."
-                                        index={0}
-                                    />
-                                    <ProjectCard
-                                        type="video"
-                                        title="Documentary Short"
-                                        category="Video Editing"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="An award-winning documentary short film about sustainable farming practices."
-                                        index={1}
-                                    />
-                                    <ProjectCard
-                                        type="video"
-                                        title="Music Video"
-                                        category="Video Editing"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="Creative music video editing for an indie band's debut single."
-                                        index={2}
-                                    />
-                                </div>
-                            </TabsContent>
-
-                            <TabsContent value="ui" className="mt-8">
-                                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                                    <ProjectCard
-                                        type="ui"
-                                        title="Finance App Redesign"
-                                        category="UI/UX Design"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="Complete redesign of a finance application focusing on improved user experience and accessibility."
-                                        index={0}
-                                    />
-                                    <ProjectCard
-                                        type="ui"
-                                        title="E-commerce Website"
-                                        category="UI/UX Design"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="End-to-end design for an e-commerce platform with a focus on conversion optimization."
-                                        index={1}
-                                    />
-                                    <ProjectCard
-                                        type="ui"
-                                        title="Health App"
-                                        category="UI/UX Design"
-                                        image="/placeholder.svg?height=400&width=600"
-                                        description="User-centered design for a health tracking application with intuitive data visualization."
-                                        index={2}
-
-                                    />
-                                </div>
-                            </TabsContent>
-                        </Tabs>
+                        <WorkShowcase />
 
                         <div className="text-center">
                             <Button variant="outline" size="lg">
@@ -576,98 +458,139 @@ const Heropage = () => {
     );
 };
 
-// Project Card Component
-// function ProjectCard({ type, title, category, image, description, index }) {
-//     return (
-//         <motion.div
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             transition={{ duration: 0.5, delay: index * 0.1 }}
-//             whileHover={{ y: -5 }}
-//         >
-//             <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg">
-//                 <div className="relative aspect-video overflow-hidden">
-//                     <img
-//                         src={image || "/placeholder.svg"}
-//                         width={600}
-//                         height={400}
-//                         alt={title}
-//                         className="object-cover transition-transform duration-500 group-hover:scale-105"
-//                     />
-//                     <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
-//                         {type === "video" ? (
-//                             <Button variant="secondary" size="icon" className="h-12 w-12 rounded-full">
-//                                 <Play className="h-6 w-6" />
-//                             </Button>
-//                         ) : (
-//                             <Button variant="secondary">View Project</Button>
-//                         )}
-//                     </div>
-//                 </div>
-//                 <CardContent className="p-4">
-//                     <Badge className="mb-2" variant={type === "video" ? "default" : "secondary"}>
-//                         {category}
-//                     </Badge>
-//                     <h3 className="mb-2 font-bold">{title}</h3>
-//                     <p className="text-sm text-muted-foreground">{description}</p>
-//                 </CardContent>
-//             </Card>
-//         </motion.div>
-//     );
-// }
-function ProjectCard({ type, title, category, image, description, index, variant = "gradient" }) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ y: -5 }}
-        >
-            <Card
-                variant={variant}
-                className="group overflow-hidden transition-all duration-300 hover:shadow-2xl"
-            >
-                <div className="relative aspect-video overflow-hidden rounded-xl">
-                    {/* Background gradient layer */}
-                    <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-pink-500/30" />
+// Work showcase data and component
+const workData = [
+  {
+    type: "Cinematography",
+    title: "Cinematic Scene 1",
+    description: "A visually stunning scene shot with professional equipment.",
+    media: "/cinema1.jpg",
+    previewType: "image",
+  },
+  {
+    type: "Cinematography",
+    title: "Cinematic Scene 2",
+    description: "Capturing the essence of storytelling through visuals.",
+    media: "/cinema2.jpg",
+    previewType: "image",
+  },
+  {
+    type: "Shorts",
+    title: "Short Video 1",
+    description: "A quick, engaging vertical short.",
+    media: "/short1.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Shorts",
+    title: "Short Video 2",
+    description: "Another creative short for social media.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271365/eumkchaqaftb5vgy2luv.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Banners",
+    title: "Promotional Banner",
+    description: "A bold, eye-catching banner design.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271876/qhsicn0tx5m6q2kv46ei.png",
+    previewType: "image",
+  },
+  {
+    type: "Banners",
+    title: "Event Banner",
+    description: "A cinematic banner for a special event.",
+    media: "/banner2.jpg",
+    previewType: "image",
+  },
+  {
+    type: "Thumbnails",
+    title: "YouTube Thumbnail 1",
+    description: "A vibrant thumbnail for maximum clicks.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271952/qag5olnhrnyt2qxgsecc.png",
+    previewType: "image",
+  },
+  {
+    type: "Thumbnails",
+    title: "YouTube Thumbnail 2",
+    description: "A bold, cinematic thumbnail.",
+    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271950/chhmuq7m7ikt67mbrahg.png",
+    previewType: "image",
+  },
+];
 
-                    {/* Image Layer */}
-                    <img
-                        src={image || "/placeholder.svg"}
-                        width={600}
-                        height={400}
-                        alt={title}
-                        className="object-cover w-full h-full relative z-10 opacity-90 transition-transform duration-500 group-hover:scale-105"
-                    />
-
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
-                        {type === "video" ? (
-                            <Button variant="secondary" size="icon" className="h-12 w-12 rounded-full">
-                                <Play className="h-6 w-6" />
-                            </Button>
-                        ) : (
-                            <Button variant="secondary">View Project</Button>
-                        )}
+function WorkShowcase() {
+  // Group works by type
+  const groupedWorks = workData.reduce((acc, work) => {
+    acc[work.type] = acc[work.type] || [];
+    acc[work.type].push(work);
+    return acc;
+  }, {});
+  const categoryOrder = ["Cinematography", "Shorts", "Banners", "Thumbnails"];
+  const categoryColors = {
+    Cinematography: "text-purple-400",
+    Shorts: "text-pink-400",
+    Banners: "text-yellow-400",
+    Thumbnails: "text-blue-400",
+  };
+  const cardColors = {
+    Cinematography: "from-purple-600/20 to-indigo-600/10 border-purple-400/40",
+    Shorts: "from-pink-500/20 to-yellow-400/10 border-pink-400/40",
+    Banners: "from-yellow-400/20 to-orange-400/10 border-yellow-400/40",
+    Thumbnails: "from-blue-400/20 to-purple-400/10 border-blue-400/40",
+    default: "from-black/80 to-primary/10 border-primary/20"
+  };
+  return (
+    <section id="work" className="py-20 md:py-32">
+      <div className="container">
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <span className="inline-block px-4 py-1 mb-3 rounded-full bg-primary/10 text-primary font-semibold uppercase tracking-wider">Portfolio</span>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">My Creative Works</h2>
+          <p className="text-muted-foreground">A professional showcase of my cinematic and creative projects.</p>
+        </div>
+        {categoryOrder.map(category => (
+          groupedWorks[category] && (
+            <div key={category} className="mb-16">
+              <h3 className={`text-2xl md:text-3xl font-extrabold mb-6 text-center tracking-tight`}>
+                <span className={categoryColors[category]}>
+                  {category === "Shorts" ? "Short " : category === "Cinematography" ? "Long " : ""}
+                  {category}
+                </span>
+                {(category === "Shorts" || category === "Cinematography") && <span className="text-white"> Videos</span>}
+              </h3>
+              <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
+                {groupedWorks[category].map((work, idx) => (
+                    <div className="w-full sm:w-[48%] lg:w-[45%] xl:w-[22%]">
+                    <motion.div
+                    key={work.title + idx}
+                    whileHover={{ scale: 1.05, boxShadow: "0 8px 32px 0 rgba(80,0,120,0.25)" }}
+                    className={`group bg-gradient-to-br ${cardColors[work.type] || cardColors.default} rounded-2xl shadow-xl p-5 border flex flex-col items-center transition-all duration-300 hover:shadow-2xl hover:border-primary/60`}
+                  >
+                    <div className="w-full aspect-video rounded-xl overflow-hidden mb-4 relative">
+                      {work.previewType === "image" ? (
+                        <img src={work.media} alt={work.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
+                      ) : (
+                        <>
+                          <video src={work.media} controls className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
+                          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <Play className="w-16 h-16 text-white/80 drop-shadow-lg" />
+                          </div>
+                        </>
+                      )}
+                      <div className="absolute inset-0 pointer-events-none rounded-xl ring-2 ring-primary/20 group-hover:ring-4 group-hover:ring-primary/40 transition-all duration-300" />
                     </div>
-                </div>
-
-                {/* Gradient can also be applied below here */}
-                <CardContent className="p-4" variant="gradient">
-                    <Badge className="mb-2" variant={type === "video" ? "default" : "secondary"}>
-                        {category}
-                    </Badge>
-                    <h3 className="mb-2 font-bold text-lg">{title}</h3>
-                    <p className="text-sm text-muted-foreground">{description}</p>
-                </CardContent>
-            </Card>
-        </motion.div>
-    );
+                    <h4 className="text-lg font-bold mb-1 text-primary drop-shadow-lg text-center">{work.title}</h4>
+                    <p className="text-muted-foreground text-xs mb-2 text-center">{work.description}</p>
+                  </motion.div>
+                    </div>
+                ))}
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+    </section>
+  );
 }
-
-
 
 export default Heropage;
 
