@@ -6,10 +6,12 @@ import { Card, CardContent } from "../Component/ui/Card";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../Component/ui/tabs";
+import * as Tabs from "@radix-ui/react-tabs";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "../Component/ui/tabs";
 import { Link } from 'react-router-dom';
 import GlobeBackground from './GlobalBg';
 import emailjs from '@emailjs/browser';
+
 import { Toaster, toast } from 'sonner';
 
 const Heropage = () => {
@@ -217,7 +219,9 @@ const Heropage = () => {
                         <WorkShowcase />
                     </div>
                 </section>
-                <section id="about" className="relative py-20 md:py-32">
+                <PricingPackages />
+                
+                {/* <section id="about" className="relative py-20 md:py-32">
                     <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_50%,rgba(120,120,255,0.1),transparent_50%)]"></div>
                     <div className="container">
                         <div className="grid gap-12 lg:grid-cols-2">
@@ -329,7 +333,99 @@ const Heropage = () => {
                             </motion.div>
                         </div>
                     </div>
-                </section>
+                </section> */}
+                <section id="about" className="relative py-20 md:py-32 overflow-hidden">
+  <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_50%,rgba(120,120,255,0.1),transparent_50%)]"></div>
+
+  <div className="container mx-auto px-4">
+    <div className="grid gap-16 lg:grid-cols-2 items-center">
+
+      {/* Image Section */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex justify-center"
+      >
+        <div className="relative w-full max-w-md">
+          <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/40 to-purple-600/40 blur-xl opacity-50"></div>
+          <img
+            src="/ak.jpg?height=500&width=500"
+            alt="About me"
+            className="relative w-full h-auto object-cover rounded-3xl shadow-xl"
+          />
+        </div>
+      </motion.div>
+
+      {/* Text Content Section */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-semibold tracking-wider mb-4">
+          About Me
+        </span>
+
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight text-white">
+          Crafting Visual Stories & Intuitive Experiences
+        </h2>
+
+        <div className="text-muted-foreground space-y-4 text-base leading-relaxed">
+          <p>
+            I'm a passionate video editor and UI/UX designer with over 5 years of experience creating compelling
+            visual content and intuitive digital experiences.
+          </p>
+          <p>
+            My background in film and digital media, combined with my expertise in user experience design,
+            allows me to approach projects with a unique perspective that balances aesthetic appeal with
+            functional design.
+          </p>
+          <p>
+            I believe in the power of storytelling through visuals and creating interfaces that feel natural and
+            effortless to users.
+          </p>
+        </div>
+
+        {/* Skills */}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 shadow-sm backdrop-blur-sm">
+            <h3 className="text-lg font-semibold mb-3 text-white">🎬 Video Editing</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {["Adobe Premiere Pro", "After Effects", "DaVinci Resolve", "Motion Graphics", "Color Grading"].map((item, i) => (
+                <li key={i} className="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary before:rounded-full">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 shadow-sm backdrop-blur-sm">
+            <h3 className="text-lg font-semibold mb-3 text-white">🧠 Videographer</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {["Figma", "Adobe XD", "User Research", "Wireframing", "Prototyping"].map((item, i) => (
+                <li key={i} className="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary before:rounded-full">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Resume Button */}
+        <div className="mt-10">
+          <Button asChild>
+            <Link href="/resume.pdf" target="_blank">
+              Download Resume <ExternalLink className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
                 <section id="contact" className="py-20 md:py-32">
                     <div className="container">
@@ -655,6 +751,121 @@ function WorkShowcase() {
           )
         ))}
       </div>
+    </section>
+  );
+}
+
+function PricingPackages() {
+  const packages = [
+    {
+      name: "Basic",
+      price: "₹3,118",
+      length: "30 seconds running time",
+      features: [
+        { label: "1 video", status: true },
+        { label: "30 seconds running time", status: true },
+        { label: "1 version", status: true },
+        { label: "Content ideation", status: true },
+        { label: "Script writing", status: false },
+        { label: "Special effects included", status: false },
+        { label: "Filming included", status: false },
+        { label: "Live-model included", status: false },
+        { label: "Subtitles included", status: false },
+      ],
+    },
+    {
+      name: "Standard",
+      price: "₹5,345",
+      length: "10 minute running time",
+      features: [
+        { label: "1 video", status: true },
+        { label: "10 minute running time", status: true },
+        { label: "2 versions", status: true },
+        { label: "Content ideation", status: true },
+        { label: "Script writing", status: true },
+        { label: "Special effects included", status: true },
+        { label: "Filming included", status: false },
+        { label: "Live-model included", status: false },
+        { label: "Subtitles included", status: false },
+      ],
+    },
+    {
+      name: "Premium",
+      price: "₹8,907",
+      length: "Up to 15 minutes",
+      features: [
+        { label: "1 video", status: true },
+        { label: "Up to 15 minutes", status: true },
+        { label: "3 versions", status: true },
+        { label: "Content ideation", status: true },
+        { label: "Script writing", status: true },
+        { label: "Special effects included", status: true },
+        { label: "Filming included", status: true },
+        { label: "Live-model included", status: true },
+        { label: "Subtitles included", status: true },
+      ],
+    },
+  ];
+
+  return (
+    <section className="py-16 bg-gradient-to-b from-zinc-600 via-gray-500 to-gray-900 dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-800">
+      <div className="container mx-auto px-2 sm:px-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white">📦 Packages</h2>
+        <Tabs.Root defaultValue="Basic" className="w-full max-w-lg mx-auto">
+          <Tabs.List className="flex justify-center gap-2 mb-6 bg-white/60 dark:bg-neutral-800/60 rounded-xl p-1 shadow-inner">
+            {packages.map((pkg) => (
+              <Tabs.Trigger
+                key={pkg.name}
+                value={pkg.name}
+                className="flex-1 px-3 sm:px-6 py-2 rounded-lg font-semibold text-sm sm:text-base border-none transition-all duration-200 focus:outline-none data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-purple-500 data-[state=active]:text-white data-[state=active]:shadow-lg text-gray-700 dark:text-gray-200 bg-transparent hover:bg-primary/10"
+              >
+                {pkg.name}
+              </Tabs.Trigger>
+            ))}
+          </Tabs.List>
+          {packages.map((pkg) => (
+            <Tabs.Content key={pkg.name} value={pkg.name}>
+              <div className="relative bg-white/20 dark:bg-neutral-400/80 backdrop-blur-lg border border-gray-700 dark:border-neutral-700 rounded-2xl shadow-2xl p-5 sm:p-8 text-center mx-auto max-w-lg transition-all duration-300 animate-fade-in">
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-gradient-to-br from-primary to-purple-500 rounded-full blur-2xl opacity-30 pointer-events-none" />
+                <h3 className="text-3xl sm:text-2xl font-bold text-black mb-1 sm:mb-2 tracking-tight drop-shadow">{pkg.name}</h3>
+                <p className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white mb-2 sm:mb-4">{pkg.price}</p>
+                <p className="text-gray-500 dark:text-gray-300 mb-4 text-sm sm:text-base font-medium">{pkg.length}</p>
+                <ul className="mb-6 text-left max-w-xs mx-auto space-y-2">
+                  {pkg.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className={`flex items-center gap-2 ${feature.status ? "text-gray-800 dark:text-white" : "text-gray-400 dark:text-gray-500 opacity-70"}`}
+                    >
+                      <span className={`w-5 h-5 flex items-center justify-center rounded-full border ${feature.status ? "bg-green-500 text-white border-green-500" : "bg-gray-200 dark:bg-neutral-800 border-gray-300 dark:border-neutral-700"}`}>
+                        {feature.status ? (
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        ) : (
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 12l6 6 6-6" /></svg>
+                        )}
+                      </span>
+                      <span className="text-xs sm:text-base">{feature.label}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button className="w-full bg-gradient-to-r from-primary to-purple-500 hover:from-purple-500 hover:to-primary text-white font-semibold py-2 px-4 rounded-xl transition shadow-md text-sm sm:text-base mt-2">
+                  Request to Order
+                </button>
+              </div>
+            </Tabs.Content>
+          ))}
+        </Tabs.Root>
+      </div>
+      <style>{`
+        @media (max-width: 640px) {
+          .max-w-lg { max-width: 98vw !important; }
+          .max-w-xs { max-width: 90vw !important; }
+        }
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fade-in 0.5s; }
+      `}</style>
     </section>
   );
 }
