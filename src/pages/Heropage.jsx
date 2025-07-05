@@ -155,7 +155,6 @@ const Heropage = () => {
                                     style={{ boxShadow: "0 0 48px 8px rgba(128,0,255,0.18), 0 4px 32px 0 rgba(0,0,0,0.10)" }}
                                 />
                             </motion.div>
-
                         </div>
                     </div>
                 </section>
@@ -688,6 +687,15 @@ function WorkShowcase() {
     Thumbnails: "text-blue-400",
     Banners: "text-yellow-400",
   };
+  const videoRefs = useRef([]);
+let globalIndex = 0;
+const handlePlay = (index) => {
+  videoRefs.current.forEach((video, i) => {
+    if (i !== index && video && !video.paused) {
+      video.pause();
+    }
+  });
+};
   const cardColors = {
     "Long Video": "from-green-600/20 to-green-400/10 border-green-400/40",
     Shorts: "from-pink-500/20 to-yellow-400/10 border-pink-400/40",
@@ -716,10 +724,12 @@ function WorkShowcase() {
                 </span>
               </h3>
               <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
-                {groupedWorks[category].map((work, idx) => (
-                    <div className="w-full sm:w-[48%] lg:w-[45%] xl:w-[22%]">
+                {groupedWorks[category].map((work,index) => {
+                    const currentIndex = globalIndex++; 
+                    return (
+                     <div className="w-full sm:w-[48%] lg:w-[45%] xl:w-[22%]">
                     <motion.div
-                    key={work.title + idx}
+                    key={work.title + index}
                     whileHover={{ scale: 1.05, boxShadow: "0 8px 32px 0 rgba(80,0,120,0.25)" }}
                     className={`group bg-gradient-to-br ${cardColors[work.type] || cardColors.default} rounded-2xl shadow-xl p-5 border flex flex-col items-center transition-all duration-300 hover:shadow-2xl hover:border-primary/60`}
                   >
@@ -728,7 +738,8 @@ function WorkShowcase() {
                         <img src={work.media} alt={work.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
                       ) : (
                         <>
-                          <video src={work.media} controls className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
+                          <video r ref={(el) => videoRefs.current[currentIndex] = el}
+                    onPlay={() => handlePlay(currentIndex)}  src={work.media} controls controlsList="nodownload" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
                           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                             <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-black/60 shadow-lg">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -745,7 +756,9 @@ function WorkShowcase() {
                     <p className="text-muted-foreground text-xs mb-2 text-center">{work.description}</p>
                   </motion.div>
                     </div>
-                ))}
+                    )
+                   
+                })}
               </div>
             </div>
           )
