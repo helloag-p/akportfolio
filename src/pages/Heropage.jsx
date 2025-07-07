@@ -220,127 +220,112 @@ const Heropage = () => {
                 </section>
                 <PricingPackages />
                 
-                {/* <section id="about" className="relative py-20 md:py-32">
-                    <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_50%,rgba(120,120,255,0.1),transparent_50%)]"></div>
-                    <div className="container">
-                        <div className="grid gap-12 lg:grid-cols-2">
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6 }}
-                                className="flex items-center justify-center"
-                            >
-                                <div className="relative">
-                                    <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/50 to-purple-500/50 opacity-70 blur-xl"></div>
-                                    <img
-                                        src="/placeholder.svg?height=500&width=500"
-                                        width={500}
-                                        height={500}
-                                        alt="About me"
-                                        className="relative rounded-2xl object-cover"
-                                    />
-                                </div>
-                            </motion.div>
+                <section id="about" className="py-24 md:py-32 bg-[#0b0b0c] text-white relative">
+  {/* Glow Background */}
+  <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_20%,rgba(0,255,128,0.06),transparent_60%)]" />
 
-                            <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6 }}
-                            >
-                                <Badge className="mb-3">About Me</Badge>
-                                <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
-                                    Crafting Visual Stories & Intuitive Experiences
-                                </h2>
-                                <div className="space-y-4 text-muted-foreground">
-                                    <p>
-                                        I'm a passionate video editor and UI/UX designer with over 5 years of experience creating compelling
-                                        visual content and intuitive digital experiences.
-                                    </p>
-                                    <p>
-                                        My background in film and digital media, combined with my expertise in user experience design,
-                                        allows me to approach projects with a unique perspective that balances aesthetic appeal with
-                                        functional design.
-                                    </p>
-                                    <p>
-                                        I believe in the power of storytelling through visuals and creating interfaces that feel natural and
-                                        effortless to users.
-                                    </p>
-                                </div>
+  <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-10 items-start">
+    
+    {/* === Left Column (4/12) === */}
+    <div className="lg:col-span-4 flex flex-col items-center  text-center  space-y-4">
+      <div className="relative w-40 h-40 rounded-full  overflow-hidden border-4 border-green-500 shadow-lg">
+        <img src="/ak.jpg" alt="Suryansh Srivastava" className="w-full h-full object-cover" />
+      </div>
+      <div>
+        <h2 className="text-2xl font-bold text-white">Abhishek Kumar</h2>
+        <p className="text-green-400 font-medium text-sm mt-1">Video Editor · Videographer</p>
+        <p className="text-gray-400 text-xs mt-1">BTech in Electrical Engineering, MMMUT · Gorakhpur</p>
+      </div>
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        className="inline-flex items-center mt-4 px-5 py-2.5 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow transition text-sm"
+      >
+        Resume
+        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+        </svg>
+      </a>
+    </div>
 
-                                <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                                    <div className="rounded-lg border bg-card p-4 shadow-sm">
-                                        <h3 className="mb-2 font-semibold">Video Editing</h3>
-                                        <ul className="space-y-1 text-sm text-muted-foreground">
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                Adobe Premiere Pro
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                After Effects
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                DaVinci Resolve
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                Motion Graphics
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                Color Grading
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div className="rounded-lg border bg-card p-4 shadow-sm">
-                                        <h3 className="mb-2 font-semibold">UI/UX Design</h3>
-                                        <ul className="space-y-1 text-sm text-muted-foreground">
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                Figma
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                Adobe XD
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                User Research
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                Wireframing
-                                            </li>
-                                            <li className="flex items-center gap-2">
-                                                <Badge variant="outline" className="h-1.5 w-1.5 rounded-full p-0" />
-                                                Prototyping
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+    {/* === Right Column (8/12) === */}
+    <div className="lg:col-span-8 grid md:grid-cols-2 gap-6">
+      
+      {/* About Me */}
+      <div className="bg-[#131313] p-6 rounded-xl border border-[#2a2a2a] shadow-md h-full">
+        <h3 className="text-md font-semibold text-green-400 mb-2">👋 About Me</h3>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          I’m a passionate motion designer blending cinematic visuals with compelling storytelling.
+          I aim to craft edits that move people — emotionally and visually — combining design thinking with technical edge.
+        </p>
+      </div>
 
-                                <div className="mt-8">
-                                    <Button asChild>
-                                        <Link href="/resume.pdf" target="_blank">
-                                            Download Resume <ExternalLink className="ml-2 h-4 w-4" />
-                                        </Link>
-                                    </Button>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section> */}
-                <section id="about" className="relative py-20 md:py-32 overflow-hidden">
+      {/* Tools & Skills */}
+      <div className="bg-[#131313] p-6 rounded-xl border border-[#2a2a2a] shadow-md h-full">
+        <h3 className="text-md font-semibold text-green-400 mb-3">🛠 Tools I Use</h3>
+        <ul className="grid grid-cols-2 gap-y-3 gap-x-4 text-sm text-gray-300">
+          {[
+            ["Premiere Pro", 4],
+            ["After Effects", 4],
+            ["Capcut", 3],
+            ["Photoshop", 4],
+            ["Canva", 5],
+          ].map(([tool, level], i) => (
+            <li key={i}>
+              <div className="flex justify-between items-center">
+                <span>{tool}</span>
+                <div className="flex space-x-1">
+                  {[...Array(5)].map((_, j) => (
+                    <span key={j} className={`w-2 h-2 rounded-full ${j < level ? "bg-green-400" : "bg-gray-600"}`} />
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Experiences */}
+      <div className="md:col-span-2 bg-[#131313] p-6 rounded-xl border border-[#2a2a2a] shadow-md">
+        <h3 className="text-md font-semibold text-green-400 mb-3">🎬 Experiences</h3>
+        <div className="space-y-4 text-sm text-gray-300">
+          {[
+            {
+              title: "Executive",
+              org: "SAE Collegiate, MMMUT",
+              time: "2023–24",
+              desc: "Produced official video for AAYANSH. Improved reach through storytelling."
+            },
+            {
+              title: "Executive",
+              org: "EEL, MMMUT",
+              time: "2023–24",
+              desc: "Designed promotional content for Fest Electra. Amplified digital presence."
+            }
+          ].map((item, i) => (
+            <div key={i}>
+              <p className="text-white font-semibold">{item.title} – <span className="text-green-400">{item.org}</span> <span className="text-xs text-gray-500">{item.time}</span></p>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+                {/* <section id="about" className="relative py-20 md:py-32 overflow-hidden">
   <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_50%,rgba(120,120,255,0.1),transparent_50%)]"></div>
 
   <div className="container mx-auto px-4">
     <div className="grid gap-16 lg:grid-cols-2 items-center">
 
       {/* Image Section */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -355,10 +340,10 @@ const Heropage = () => {
             className="relative w-full h-auto object-cover rounded-3xl shadow-xl"
           />
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Text Content Section */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -420,10 +405,10 @@ const Heropage = () => {
             </Link>
           </Button>
         </div>
-      </motion.div>
-    </div>
-  </div>
-</section>
+      {/* </motion.div> */}
+    {/* </div>
+  </div> */}
+{/* // </section> */} 
 
 
                 <section id="contact" className="py-20 md:py-32">
