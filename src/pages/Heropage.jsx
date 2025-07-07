@@ -398,13 +398,13 @@ const Heropage = () => {
         </div>
 
         {/* Resume Button */}
-        <div className="mt-10">
+        {/* <div className="mt-10">
           <Button asChild>
             <Link href="/resume.pdf" target="_blank">
               Download Resume <ExternalLink className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-        </div>
+        </div> */}
       {/* </motion.div> */}
     {/* </div>
   </div> */}
