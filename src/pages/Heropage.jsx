@@ -65,10 +65,10 @@ const Heropage = () => {
 
         try {
             await emailjs.sendForm(
-                'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-                'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+                'service_eapnshd', // Replace with your EmailJS service ID
+                'template_ohg6j26', // Replace with your EmailJS template ID
                 formRef.current,
-                'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+                '_FwN9x8MJE6KuTaaO' // Replace with your EmailJS public key
             );
 
             toast.success('Message sent successfully!');
@@ -121,18 +121,18 @@ const Heropage = () => {
                                     I create compelling visual stories and design intuitive user experiences that engage and inspire.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                                    <a href="#work" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
                                         View My Work <ArrowRight className="ml-2 h-4 w-4" />
-                                    </Button>
-                                    <Button size="lg" variant="outline">
+                                    </a>
+                                    <a href="#contact" size="lg" variant="outline">
                                         Get in Touch
-                                    </Button>
+                                    </a>
                                 </div>
                                 <div className="flex gap-4 pt-4">
-                                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                                    <a href="https://www.linkedin.com/in/abhishek-kumar-b77b91288/" className="text-muted-foreground hover:text-primary transition-colors">
                                         <Linkedin className="h-5 w-5" />
                                     </a>
-                                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                                    <a href="https://www.instagram.com/abhishek._.075/" className="text-muted-foreground hover:text-primary transition-colors">
                                         <Instagram className="h-5 w-5" />
                                     </a>
                                 </div>
@@ -229,7 +229,7 @@ const Heropage = () => {
     {/* === Left Column (4/12) === */}
     <div className="lg:col-span-4 flex flex-col items-center  text-center  space-y-4">
       <div className="relative w-40 h-40 rounded-full  overflow-hidden border-4 border-green-500 shadow-lg">
-        <img src="/ak.jpg" alt="Suryansh Srivastava" className="w-full h-full object-cover" />
+        <img src="/me.jpg" alt="Suryansh Srivastava" className="w-full h-full object-cover" />
       </div>
       <div>
         <h2 className="text-2xl font-bold text-white">Abhishek Kumar</h2>
@@ -237,7 +237,7 @@ const Heropage = () => {
         <p className="text-gray-400 text-xs mt-1">BTech in Electrical Engineering, MMMUT · Gorakhpur</p>
       </div>
       <a
-        href="/resume.pdf"
+        href="https://drive.google.com/file/d/1FvT9YAOHmWipal-yNaC8rVTMWuEkVWVi/view?usp=drivesdk"
         target="_blank"
         className="inline-flex items-center mt-4 px-5 py-2.5 bg-green-500 hover:bg-green-600 text-white font-medium rounded-md shadow transition text-sm"
       >
@@ -265,11 +265,11 @@ const Heropage = () => {
         <h3 className="text-md font-semibold text-green-400 mb-3">🛠 Tools I Use</h3>
         <ul className="grid grid-cols-2 gap-y-3 gap-x-4 text-sm text-gray-300">
           {[
-            ["Premiere Pro", 4],
+            ["Premiere Pro", 3],
             ["After Effects", 4],
-            ["Capcut", 3],
+            ["Capcut", 5],
             ["Photoshop", 4],
-            ["Canva", 5],
+            ["Canva", 3],
           ].map(([tool, level], i) => (
             <li key={i}>
               <div className="flex justify-between items-center">
@@ -294,7 +294,7 @@ const Heropage = () => {
               title: "Executive",
               org: "SAE Collegiate, MMMUT",
               time: "2023–24",
-              desc: "Produced official video for AAYANSH. Improved reach through storytelling."
+              desc: "Produced official video for TECHSRIJAN. Improved reach through storytelling."
             },
             {
               title: "Executive",
@@ -374,10 +374,10 @@ const Heropage = () => {
         </div>
 
         {/* Skills */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        {/* <div className="mt-10 grid gap-6 sm:grid-cols-2"> */}
           <div className="bg-white/5 border border-white/10 rounded-xl p-5 shadow-sm backdrop-blur-sm">
             <h3 className="text-lg font-semibold mb-3 text-white">🎬 Video Editing</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-2 text-m text-muted-foreground">
               {["Adobe Premiere Pro", "After Effects", "DaVinci Resolve", "Motion Graphics", "Color Grading"].map((item, i) => (
                 <li key={i} className="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary before:rounded-full">
                   {item}
@@ -385,7 +385,7 @@ const Heropage = () => {
               ))}
             </ul>
           </div>
-          <div className="bg-white/5 border border-white/10 rounded-xl p-5 shadow-sm backdrop-blur-sm">
+          {/* <div className="bg-white/5 border border-white/10 rounded-xl p-5 shadow-sm backdrop-blur-sm">
             <h3 className="text-lg font-semibold mb-3 text-white">🧠 Videographer</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {["Figma", "Adobe XD", "User Research", "Wireframing", "Prototyping"].map((item, i) => (
@@ -394,8 +394,8 @@ const Heropage = () => {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
 
         {/* Resume Button */}
         {/* <div className="mt-10">
@@ -411,7 +411,7 @@ const Heropage = () => {
 {/* // </section> */} 
 
 
-                <section id="contact" className="py-20 md:py-32">
+                {/* <section id="contact" className="py-20 md:py-32">
                     <div className="container">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -509,7 +509,132 @@ const Heropage = () => {
                         </motion.div>
                     </div>
                     <Toaster position="top-right" />
-                </section>
+                </section> */}
+                <section id="contact" className="py-24 md:py-32 bg-[#0d0d0d] text-white relative">
+  <div className="container">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="mx-auto max-w-3xl text-center"
+    >
+      <Badge className="mb-4">Contact</Badge>
+      <h2 className="text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-green-400">
+        Let's Work Together
+      </h2>
+      <p className="mb-10 text-sm sm:text-base text-gray-400">
+        Available for freelance gigs, internships, and collaborations. Let’s build something great together!
+      </p>
+
+      <Card className="bg-white/10 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl">
+        <CardContent className="grid gap-8 p-8 sm:p-10">
+
+          {/* Contact Info */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {[
+              {
+                icon: <Mail className="mx-auto mb-2 h-6 w-6 text-green-400" />,
+                label: 'Email Me',
+                value: 'abhishekkumardev57@gmail.com'
+              },
+              {
+                icon: <Instagram className="mx-auto mb-2 h-6 w-6 text-pink-400" />,
+                label: 'Follow Me',
+                value: '@abhishek._.075'
+              }
+            ].map((info, idx) => (
+              <div
+                key={idx}
+                className="rounded-xl border bg-[#1a1a1a] p-5 text-center shadow-sm hover:shadow-lg transition hover:border-green-400 hover:bg-[#222]"
+              >
+                {info.icon}
+                <h3 className="font-semibold text-white">{info.label}</h3>
+                <p className="text-sm text-gray-400 mt-1">{info.value}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Contact Form */}
+          <div className="relative overflow-hidden rounded-xl border border-[#2a2a2a] bg-[#121212]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,255,128,0.05),transparent_60%)] pointer-events-none" />
+            <div className="relative p-6 sm:p-8">
+              <h3 className="text-xl font-semibold text-green-400 mb-6">📩 Send a Message</h3>
+
+              <form ref={formRef} onSubmit={handleSubmit} className="grid gap-6">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-2 text-left">
+                    <label htmlFor="name" className="text-sm font-medium text-gray-300">Name</label>
+                    <input
+                      id="name"
+                      name="user_name"
+                      required
+                      placeholder="Your name"
+                      className="rounded-md bg-[#1b1b1b] border border-gray-600 px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-green-400"
+                    />
+                  </div>
+                  <div className="grid gap-2 text-left">
+                    <label htmlFor="email" className="text-sm font-medium text-gray-300">Email</label>
+                    <input
+                      id="email"
+                      name="user_email"
+                      type="email"
+                      required
+                      placeholder="you@example.com"
+                      className="rounded-md bg-[#1b1b1b] border border-gray-600 px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-green-400"
+                    />
+                  </div>
+                </div>
+                <div className="grid gap-2 text-left">
+                  <label htmlFor="message" className="text-sm font-medium text-gray-300">Phone Number</label>
+                  <input
+                    id="phone"
+                    name="user_phone"
+                    rows="1"
+                    required
+                    placeholder="Your phone number"
+                    className="rounded-md bg-[#1b1b1b] border border-gray-600 px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-green-400"
+                  />
+                </div>
+                <div className="grid gap-2 text-left">
+                  <label htmlFor="message" className="text-sm font-medium text-gray-300">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Tell me about your project..."
+                    className="rounded-md bg-[#1b1b1b] border border-gray-600 px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-green-400"
+                  ></textarea>
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-green-500 hover:bg-green-600 transition"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <span className="flex items-center gap-2">
+                      <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                      Sending...
+                    </span>
+                  ) : (
+                    'Send Message'
+                  )}
+                </Button>
+              </form>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
+  </div>
+
+  <Toaster position="top-right" />
+</section>
+
+
             </main>
         </div>
     );
@@ -520,15 +645,15 @@ const workData = [
   // Long Videos
   {
     type: "Long Video",
-    title: "Event Aftermovie",
-    description: "A full-length cinematic aftermovie for a major event.",
+    title: "Movie Review",
+    // description: "A full-length cinematic aftermovie for a major event.",
     media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751270279/lwjqqisrj0lcxuaycpye.mp4",
     previewType: "video",
   },
   {
     type: "Long Video",
-    title: "Documentary Feature",
-    description: "A documentary exploring unique stories.",
+    title: "Event Aftermovie",
+    // description: "A documentary exploring unique stories.",
     media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751283387/VID-20250630-WA0000_cioeks.mp4",
     previewType: "video",
   },
@@ -536,21 +661,21 @@ const workData = [
   {
     type: "Shorts",
     title: "Short Video 1",
-    description: "A quick, engaging vertical short.",
+    // description: "A quick, engaging vertical short.",
     media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271451/wcloubooir7hti197qzz.mp4",
     previewType: "video",
   },
   {
     type: "Shorts",
     title: "Short Video 2",
-    description: "Another creative short for social media.",
+    // description: "Another creative short for social media.",
     media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271365/eumkchaqaftb5vgy2luv.mp4",
     previewType: "video",
   },
   {
     type: "Shorts",
     title: "Short Video 3",
-    description: "A trending short with cinematic effects.",
+    // description: "A trending short with cinematic effects.",
     media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751272731/WhatsApp_Video_2025-06-30_at_2.01.26_PM_syrzav.mp4",
     previewType: "video",
   },
@@ -558,28 +683,28 @@ const workData = [
   {
     type: "Cinematography",
     title: "Cinematic Scene 1",
-    description: "A visually stunning scene shot with professional equipment.",
+    // description: "A visually stunning scene shot with professional equipment.",
     media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751273982/lv_0_20250521023647_amzmbb.mp4",
     previewType: "video",
   },
   {
     type: "Cinematography",
     title: "Cinematic Scene 2",
-    description: "Capturing the essence of storytelling through visuals.",
+    // description: "Capturing the essence of storytelling through visuals.",
     media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751274693/lv_0_20250330151242_ivjh2l.mp4",
     previewType: "video",
   },
   {
     type: "Cinematography",
-    title: "Nature Timelapse",
-    description: "A breathtaking timelapse of nature.",
+    title: "Cinematic Scene 3",
+    // description: "A breathtaking timelapse of nature.",
     media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751272943/lv_0_20250420163425_bjioql.mp4",
     previewType: "video",
   },
   {
     type: "Cinematography",
-    title: "Urban Exploration",
-    description: "Exploring the city with cinematic shots.",
+    title: "Cinematic Scene 4",
+    // description: "Exploring the city with cinematic shots.",
     media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751273951/lv_0_20250526160450_r02kie.mp4",
     previewType: "video",
   },
@@ -587,71 +712,64 @@ const workData = [
   {
     type: "Thumbnails",
     title: "YouTube Thumbnail 1",
-    description: "A vibrant thumbnail for maximum clicks.",
+    // description: "A vibrant thumbnail for maximum clicks.",
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271952/qag5olnhrnyt2qxgsecc.png",
     previewType: "image",
   },
   {
     type: "Thumbnails",
     title: "YouTube Thumbnail 2",
-    description: "A bold, cinematic thumbnail.",
+    // description: "A bold, cinematic thumbnail.",
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271950/chhmuq7m7ikt67mbrahg.png",
     previewType: "image",
   },
   {
     type: "Thumbnails",
-    title: "Travel Vlog Thumbnail",
-    description: "A thumbnail for a travel vlog.",
+    title: "Thumbnail 3",
+    // description: "A thumbnail for a travel vlog.",
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271882/wb5ij9ohfiz0lhhozect.png",
     previewType: "image",
   },
   {
     type: "Thumbnails",
-    title: "Tech Review Thumbnail",
-    description: "A tech review video thumbnail.",
+    title: "Thumbnail 4",
+    // description: "A tech review video thumbnail.",
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271884/nfidnwmobbau4dlwjbjn.png",
     previewType: "image",
   },
   {
     type: "Thumbnails",
-    title: "Cooking Show Thumbnail",
-    description: "A delicious cooking show thumbnail.",
+    title: "Thumbnail 5",
+    // description: "A delicious cooking show thumbnail.",
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271896/paeddxycyrf0be15mtbq.png",
     previewType: "image",
   },
   {
     type: "Thumbnails",
-    title: "Music Video Thumbnail",
-    description: "A thumbnail for a music video.",
+    title: "Thumbnail 6",
+    // description: "A thumbnail for a music video.",
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271921/ixygwsnm5d94bkvcgr3e.png",
     previewType: "image",
   },
   {
     type: "Thumbnails",
-    title: "Gaming Highlight Thumbnail",
-    description: "A gaming highlight video thumbnail.",
+    title: "Thumbnail 7",
+    // description: "A gaming highlight video thumbnail.",
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271927/djaupyrxy5t4doo6wzt4.png",
-    previewType: "image",
-  },
-  {
-    type: "Thumbnails",
-    title: "Fitness Channel Thumbnail",
-    description: "A fitness channel video thumbnail.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271957/qwvbbyg22aqqlmvuiim9.png",
     previewType: "image",
   },
   // Banners
   {
     type: "Banners",
-    title: "Promotional Banner",
-    description: "A bold, eye-catching banner design.",
+    title: "Youtube Banner",
+    // description: "A bold, eye-catching banner design.",
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271876/qhsicn0tx5m6q2kv46ei.png",
     previewType: "image",
   },
   {
     type: "Banners",
-    title: "Event Banner",
-    description: "A cinematic banner for a special event.",
+    title: "Linkedin Banner",
+    // description: "A cinematic banner for a special event.",
     media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271963/q590h4rztpnbfilwe4zv.png",
     previewType: "image",
   },
@@ -757,7 +875,7 @@ function PricingPackages() {
   const packages = [
     {
       name: "Basic",
-      price: "₹3,118",
+      price: "₹585",
       length: "30 seconds running time",
       features: [
         { label: "1 video", status: true },
@@ -773,8 +891,8 @@ function PricingPackages() {
     },
     {
       name: "Standard",
-      price: "₹5,345",
-      length: "10 minute running time",
+      price: "₹1,570",
+      length: "1 Minute Video-contact me before ordering",
       features: [
         { label: "1 video", status: true },
         { label: "10 minute running time", status: true },
@@ -789,8 +907,8 @@ function PricingPackages() {
     },
     {
       name: "Premium",
-      price: "₹8,907",
-      length: "Up to 15 minutes",
+      price: "₹5,285",
+      length: "Up to 2 Minutes-contact me before ordering",
       features: [
         { label: "1 video", status: true },
         { label: "Up to 15 minutes", status: true },
@@ -806,65 +924,7 @@ function PricingPackages() {
   ];
 
   return (
-    // <section className="py-16 bg-gradient-to-b from-zinc-600 via-gray-500 to-gray-900 dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-800">
-    //   <div className="container mx-auto px-2 sm:px-4">
-    //     <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white">📦 Packages</h2>
-    //     <Tabs.Root defaultValue="Basic" className="w-full max-w-lg mx-auto">
-    //       <Tabs.List className="flex justify-center gap-2 mb-6 bg-white/60 dark:bg-neutral-800/60 rounded-xl p-1 shadow-inner">
-    //         {packages.map((pkg) => (
-    //           <Tabs.Trigger
-    //             key={pkg.name}
-    //             value={pkg.name}
-    //             className="flex-1 px-3 sm:px-6 py-2 rounded-lg font-semibold text-sm sm:text-base border-none transition-all duration-200 focus:outline-none data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-purple-500 data-[state=active]:text-white data-[state=active]:shadow-lg text-gray-700 dark:text-gray-200 bg-transparent hover:bg-primary/10"
-    //           >
-    //             {pkg.name}
-    //           </Tabs.Trigger>
-    //         ))}
-    //       </Tabs.List>
-    //       {packages.map((pkg) => (
-    //         <Tabs.Content key={pkg.name} value={pkg.name}>
-    //           <div className="relative bg-white/20 dark:bg-neutral-400/80 backdrop-blur-lg border border-gray-700 dark:border-neutral-700 rounded-2xl shadow-2xl p-5 sm:p-8 text-center mx-auto max-w-lg transition-all duration-300 animate-fade-in">
-    //             <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-gradient-to-br from-primary to-purple-500 rounded-full blur-2xl opacity-30 pointer-events-none" />
-    //             <h3 className="text-3xl sm:text-2xl font-bold text-black mb-1 sm:mb-2 tracking-tight drop-shadow">{pkg.name}</h3>
-    //             <p className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white mb-2 sm:mb-4">{pkg.price}</p>
-    //             <p className="text-gray-500 dark:text-gray-300 mb-4 text-sm sm:text-base font-medium">{pkg.length}</p>
-    //             <ul className="mb-6 text-left max-w-xs mx-auto space-y-2">
-    //               {pkg.features.map((feature, i) => (
-    //                 <li
-    //                   key={i}
-    //                   className={`flex items-center gap-2 ${feature.status ? "text-gray-800 dark:text-white" : "text-gray-400 dark:text-gray-500 opacity-70"}`}
-    //                 >
-    //                   <span className={`w-5 h-5 flex items-center justify-center rounded-full border ${feature.status ? "bg-green-500 text-white border-green-500" : "bg-gray-200 dark:bg-neutral-800 border-gray-300 dark:border-neutral-700"}`}>
-    //                     {feature.status ? (
-    //                       <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-    //                     ) : (
-    //                       <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 12l6 6 6-6" /></svg>
-    //                     )}
-    //                   </span>
-    //                   <span className="text-xs sm:text-base">{feature.label}</span>
-    //                 </li>
-    //               ))}
-    //             </ul>
-    //             <button className="w-full bg-gradient-to-r from-primary to-purple-500 hover:from-purple-500 hover:to-primary text-white font-semibold py-2 px-4 rounded-xl transition shadow-md text-sm sm:text-base mt-2">
-    //               Request to Order
-    //             </button>
-    //           </div>
-    //         </Tabs.Content>
-    //       ))}
-    //     </Tabs.Root>
-    //   </div>
-    //   <style>{`
-    //     @media (max-width: 640px) {
-    //       .max-w-lg { max-width: 98vw !important; }
-    //       .max-w-xs { max-width: 90vw !important; }
-    //     }
-    //     @keyframes fade-in {
-    //       from { opacity: 0; transform: translateY(20px); }
-    //       to { opacity: 1; transform: translateY(0); }
-    //     }
-    //     .animate-fade-in { animation: fade-in 0.5s; }
-    //   `}</style>
-    // </section>
+   
     <section className="py-16 bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-800">
   <div className="container mx-auto px-4">
     <h2 className="text-4xl font-bold text-center mb-10 text-white">📦 Packages</h2>
@@ -921,9 +981,9 @@ function PricingPackages() {
               ))}
             </ul>
 
-            <button className="w-full bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary py-2 px-6 rounded-lg text-white font-semibold transition-all shadow-lg">
+            <a href="https://wa.link/3skci6" target="_blank" className="w-full flex justify-center items-center bg-gradient-to-r from-primary to-purple-600 hover:from-purple-600 hover:to-primary py-2 px-6 rounded-lg text-white font-semibold transition-all shadow-lg">
               Request to Order
-            </button>
+            </a>
           </div>
         </Tabs.Content>
       ))}

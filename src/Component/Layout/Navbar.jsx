@@ -78,9 +78,9 @@ export const Navbar = () => {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                                    <a href="https://wa.link/3skci6" className="bg-primary text-primary-foreground hover:bg-primary/90">
                                         Hire Me
-                                    </Button>
+                                    </a>
                                 </motion.div>
                             </nav>
     

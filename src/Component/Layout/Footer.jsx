@@ -51,17 +51,33 @@ const Footer = () => {
           <div>
             © {new Date().getFullYear()} Abhishek Kumar. All rights reserved.
           </div>
-          <div className="flex items-center gap-2">
-            <span>Designed and Developed with ❤️ By</span>
-            <a 
-              href="https://github.com/parvagarwal" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-secondary hover:underline font-bold text-amber-500"
-            >
-              Parv Agarwal
-            </a>
-          </div>
+          <div className="text-center text-sm text-gray-400 space-y-1">
+  <div>
+    <span className='text-lg'>Designed and Developed with ❤️ by{" "}</span>
+    <a 
+    href="mailto:parvagwork07@gmail.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="text-lg hover:underline font-bold text-amber-500"
+  >
+    Parv Agarwal
+  </a>
+  </div>
+  <div>
+    <a
+      href="https://www.linkedin.com/in/parv-agarwal-09b042215"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-400 text-lg hover:underline"
+    >
+      Connect on LinkedIn
+    </a>
+    <span className='text-lg'> {" "}
+    — Available for freelance work & collaborations!</span>
+   
+  </div>
+</div>
+
         </div>
       </div>
     </footer>
