@@ -81,6 +81,16 @@ const Heropage = () => {
         }
     };
 
+    const videosRef = useRef([]);
+
+    const handlePlay = (index) => {
+       videosRef.current.forEach((video, i) => {
+          if (i !== index && video && !video.paused) {
+           video.pause();
+       }
+       });
+      };
+
     return (
         <div className="relative min-h-screen overflow-hidden">
             {/* Soft Radial Gradient Background */}
@@ -159,30 +169,31 @@ const Heropage = () => {
                     </div>
                 </section>
                 <div className="flex justify-center py-12">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="relative rounded-3xl overflow-hidden shadow-2xl max-w-3xl w-full flex justify-center items-center border-4 border-yellow-400/80 bg-gradient-to-br from-purple-600/20 via-black/60 to-indigo-500/20 p-4"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-black to-indigo-500 opacity-25 blur-xl z-0" />
-                        <video
-  autoPlay
-  loop
-  controls
-  playsInline
-  className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105 shadow-xl"
->
-  <source
-    src="https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271662/ybqxbwxk8d6c7y5n1fgx.mp4"
-    type="video/mp4"
-  />
-  Your browser does not support the video tag.
-</video>
-
-                    </motion.div>
-                </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative rounded-3xl overflow-hidden shadow-2xl max-w-3xl w-full flex justify-center items-center border-4 border-yellow-400/80 bg-gradient-to-br from-purple-600/20 via-black/60 to-indigo-500/20 p-4"
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-black to-indigo-500 opacity-25 blur-xl z-0" />
+        <video
+          ref={(el) => (videosRef.current[0] = el)}
+          autoPlay
+          loop
+          controls
+          playsInline
+          onPlay={() => handlePlay(0)}
+          className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105 shadow-xl"
+        >
+          <source
+            src="https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271662/ybqxbwxk8d6c7y5n1fgx.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </motion.div>
+    </div>
                 <div className="flex justify-center py-12">
                     <div className="bg-gradient-to-br from-yellow-900/60 via-black/80 to-yellow-700/40 rounded-2xl shadow-2xl p-8 w-full max-w-3xl flex flex-col items-center border border-yellow-900/30">
                         <img
@@ -215,7 +226,7 @@ const Heropage = () => {
                 </div>
                 <section id="work" className="py-20 md:py-32">
                     <div className="container">
-                        <WorkShowcase />
+                        <WorkShowcase videosRef={videosRef} handlePlay={handlePlay}  />
                     </div>
                 </section>
                 <PricingPackages />
@@ -291,15 +302,15 @@ const Heropage = () => {
         <div className="space-y-4 text-sm text-gray-300">
           {[
             {
-              title: "Executive",
+              title: "Executive Member",
               org: "SAE Collegiate, MMMUT",
-              time: "2023–24",
+              time: "2023–Present",
               desc: "Produced official video for TECHSRIJAN. Improved reach through storytelling."
             },
             {
-              title: "Executive",
+              title: "Executive Member",
               org: "EEL, MMMUT",
-              time: "2023–24",
+              time: "2023–Present",
               desc: "Designed promotional content for Fest Electra. Amplified digital presence."
             }
           ].map((item, i) => (
@@ -775,7 +786,7 @@ const workData = [
   },
 ];
 
-function WorkShowcase() {
+const WorkShowcase = ({ videosRef, handlePlay }) => {
   // Group works by type
   const groupedWorks = workData.reduce((acc, work) => {
     acc[work.type] = acc[work.type] || [];
@@ -790,15 +801,15 @@ function WorkShowcase() {
     Thumbnails: "text-blue-400",
     Banners: "text-yellow-400",
   };
-  const videoRefs = useRef([]);
-let globalIndex = 0;
-const handlePlay = (index) => {
-  videoRefs.current.forEach((video, i) => {
-    if (i !== index && video && !video.paused) {
-      video.pause();
-    }
-  });
-};
+  // const videoRefs = useRef([]);
+let globalIndex = 1;
+// const handlePlay = (index) => {
+//   videoRefs.current.forEach((video, i) => {
+//     if (i !== index && video && !video.paused) {
+//       video.pause();
+//     }
+//   });
+// };
   const cardColors = {
     "Long Video": "from-green-600/20 to-green-400/10 border-green-400/40",
     Shorts: "from-pink-500/20 to-yellow-400/10 border-pink-400/40",
@@ -841,8 +852,9 @@ const handlePlay = (index) => {
                         <img src={work.media} alt={work.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
                       ) : (
                         <>
-                          <video r ref={(el) => videoRefs.current[currentIndex] = el}
-                    onPlay={() => handlePlay(currentIndex)}  src={work.media} controls controlsList="nodownload" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
+                        <video ref={(el) => (videosRef.current[currentIndex] = el)}
+  onPlay={() => handlePlay(currentIndex)}
+                     src={work.media} controls controlsList="nodownload" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
                           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                             <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-black/60 shadow-lg">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
