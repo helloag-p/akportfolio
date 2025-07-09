@@ -182,6 +182,7 @@ const Heropage = () => {
           autoPlay
           loop
           controls
+          controlsList="nodownload"
           playsInline
           onPlay={() => handlePlay(0)}
           className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105 shadow-xl"
