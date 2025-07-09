@@ -119,9 +119,9 @@ export const Navbar = () => {
                                                 {section.charAt(0).toUpperCase() + section.slice(1)}
                                             </a>
                                         ))}
-                                        <Button className="mt-2 bg-primary text-primary-foreground hover:bg-primary/90">
-                                            Hire Me
-                                        </Button>
+                                       <a href="https://wa.link/3skci6" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                                        Hire Me
+                                    </a>
                                     </nav>
                                 </div>
                             </motion.div>
