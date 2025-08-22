@@ -688,7 +688,7 @@ const workData = [
     type: "Shorts",
     title: "Short Video 3",
     // description: "A trending short with cinematic effects.",
-    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878718/lv_0_20250420163425_ovwz5l.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878700/WhatsApp_Video_2025-06-30_at_2.01.26_PM_ykeos2.mp4",
     previewType: "video",
   },
   // Cinematography
