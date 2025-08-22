@@ -188,7 +188,7 @@ const Heropage = () => {
           className="relative z-10 w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-105 shadow-xl"
         >
           <source
-            src="https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271662/ybqxbwxk8d6c7y5n1fgx.mp4"
+            src="https://res.cloudinary.com/dfpshm02e/video/upload/v1755878850/lv_0_20250528001613_swa1oj.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -659,14 +659,14 @@ const workData = [
     type: "Long Video",
     title: "Movie Review",
     // description: "A full-length cinematic aftermovie for a major event.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751270279/lwjqqisrj0lcxuaycpye.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878830/SSYouTube.online_Doctor_Strange_Third_Eye_Explained_in_Hindi_1080p_mpzywq.mp4",
     previewType: "video",
   },
   {
     type: "Long Video",
     title: "Event Aftermovie",
     // description: "A documentary exploring unique stories.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751283387/VID-20250630-WA0000_cioeks.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878755/WhatsApp_Video_2025-06-30_at_2.01.26_PM_1_c0es6s.mp4",
     previewType: "video",
   },
   // Shorts
@@ -674,21 +674,21 @@ const workData = [
     type: "Shorts",
     title: "Short Video 1",
     // description: "A quick, engaging vertical short.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271451/wcloubooir7hti197qzz.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878802/lv_0_20250407134817_nwkwjr.mp4",
     previewType: "video",
   },
   {
     type: "Shorts",
     title: "Short Video 2",
     // description: "Another creative short for social media.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751271365/eumkchaqaftb5vgy2luv.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878815/lv_0_20250430225617_b6icpy.mp4",
     previewType: "video",
   },
   {
     type: "Shorts",
     title: "Short Video 3",
     // description: "A trending short with cinematic effects.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751272731/WhatsApp_Video_2025-06-30_at_2.01.26_PM_syrzav.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878718/lv_0_20250420163425_ovwz5l.mp4",
     previewType: "video",
   },
   // Cinematography
@@ -696,28 +696,28 @@ const workData = [
     type: "Cinematography",
     title: "Cinematic Scene 1",
     // description: "A visually stunning scene shot with professional equipment.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751273982/lv_0_20250521023647_amzmbb.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878736/lv_0_20250521023647_vtaf7y.mp4",
     previewType: "video",
   },
   {
     type: "Cinematography",
     title: "Cinematic Scene 2",
     // description: "Capturing the essence of storytelling through visuals.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751274693/lv_0_20250330151242_ivjh2l.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878733/lv_0_20250330151242_g7qz6x.mp4",
     previewType: "video",
   },
   {
     type: "Cinematography",
     title: "Cinematic Scene 3",
     // description: "A breathtaking timelapse of nature.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751272943/lv_0_20250420163425_bjioql.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878732/lv_0_20250526160450_v8iwiy.mp4",
     previewType: "video",
   },
   {
     type: "Cinematography",
     title: "Cinematic Scene 4",
     // description: "Exploring the city with cinematic shots.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/video/upload/v1751273951/lv_0_20250526160450_r02kie.mp4",
+    media: "https://res.cloudinary.com/dfpshm02e/video/upload/v1755878718/lv_0_20250420163425_ovwz5l.mp4",
     previewType: "video",
   },
   // Thumbnails
@@ -725,21 +725,21 @@ const workData = [
     type: "Thumbnails",
     title: "YouTube Thumbnail 1",
     // description: "A vibrant thumbnail for maximum clicks.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271952/qag5olnhrnyt2qxgsecc.png",
+    media: "https://res.cloudinary.com/dfpshm02e/image/upload/v1755878714/20230212_224703_wkd2o4.png",
     previewType: "image",
   },
   {
     type: "Thumbnails",
     title: "YouTube Thumbnail 2",
     // description: "A bold, cinematic thumbnail.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271950/chhmuq7m7ikt67mbrahg.png",
+    media: "https://res.cloudinary.com/dfpshm02e/image/upload/v1755878714/20230212_224703_wkd2o4.png",
     previewType: "image",
   },
   {
     type: "Thumbnails",
     title: "Thumbnail 3",
     // description: "A thumbnail for a travel vlog.",
-    media: "https://res.cloudinary.com/ddwh4d4sn/image/upload/v1751271882/wb5ij9ohfiz0lhhozect.png",
+    media: "https://res.cloudinary.com/dfpshm02e/image/upload/v1755878709/20221208_131808_serotk.png",
     previewType: "image",
   },
   {
